@@ -12,12 +12,16 @@ puts "--------------------------------------------------------------------------
 puts "Quel est ton nom, humain ?"
 name_player = gets.chomp
 sleep 1
-puts "#{name_player} ? Quel drôle de nom. Tu vas pas aller bien loin toi ..."
+puts "#{name_player} ? Quel drôle de nom. Tu vas pas aller bien loin toi ...".green
 sleep 1
 
-puts "Contre combien d'ennemis souhaites-tu montrer toute l'étendue de tes skills ?"
-game1 = Game.new(name_player, gets.chomp)
+enemies_number = 0
+while enemies_number < 2
+  puts "Contre combien d'ennemis souhaites-tu montrer toute l'étendue de tes skills (minimum 2 tu veux mieux que ça) ?"
+  enemies_number = gets.chomp.to_i
+  game1 = Game.new(name_player, enemies_number)
 
+end
 puts "Okay moussaillon...c'est partie !"
 while game1.is_still_ongoing? == true
   puts "\n"

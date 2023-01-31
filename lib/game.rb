@@ -95,12 +95,12 @@ class Game
 
   def menu_end
     sleep 2
-    puts "\n####################### !! La partie est finie !! #############################"
+    puts "\n####################### !! La partie est finie !! #############################".red
     sleep 2
     if @human_player.life_points >= 0
-      puts "\nBRAVO ! TU AS GAGNE !"
+      puts "\nBRAVO ! TU AS GAGNE !".green
     else
-      puts "\nLoser ! Tu as perdu !"
+      puts "\nLoser ! Tu as perdu ! Retente ta chance :)".red
     end
   end
 end
